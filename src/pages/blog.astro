@@ -1,5 +1,18 @@
 ---
-
+const listitems = [
+  "Pick your framework: we'll use bun and astro",
+  "Deploy to GitHub",
+  "Connect to Netlify",
+];
+const navitems = [
+  { url: "/", name: "Home" },
+  { url: "/about", name: "About" },
+  { url: "/blog", name: "Blog" },
+];
+const myname = navitems[2].name;
+const myitems = navitems.filter(({ url, name }) => {
+  return name != myname;
+});
 ---
 
 <html lang="en">
@@ -11,15 +24,20 @@
     <title>Astro</title>
   </head>
   <body>
-    <a href="/">Home</a>
-    <a href="/about">About</a>
+    {
+      myitems.map(({ url, name }) => {
+        return (
+          <a class="mx-5" href={url}>
+            {name}
+          </a>
+        );
+      })
+    }
     <h1 class="text-3xl text-center">Blog</h1>
-    <p>Modern integrations are remarkably simple</p>
-    <ul class="list-disc">
-      <li>Pick your framework: we'll use bun and astro</li>
-      <li>Deploy to GitHub</li>
-      <li>Connect to Netlify</li>
+    <p class="mx-5">Modern integrations are remarkably simple</p>
+    <ul class="list-disc mx-10">
+      {listitems.map((x) => <li>{x}</li>)}
     </ul>
-    <p>And here you go</p>
+    <p class="mx-5">And here you go</p>
   </body>
 </html>
