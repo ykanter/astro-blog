@@ -1,5 +1,13 @@
 ---
-
+const navitems = [
+  { url: "/", name: "Home" },
+  { url: "/about", name: "About" },
+  { url: "/blog", name: "Blog" },
+];
+const myname = navitems[0].name;
+const myitems = navitems.filter(({ url, name }) => {
+  return name != myname;
+});
 ---
 
 <html lang="en">
@@ -11,9 +19,17 @@
     <title>Astro</title>
   </head>
   <body>
-    <a href="/about">About</a>
-    <a href="/blog">Blog</a>
+    {
+      myitems.map(({ url, name }) => {
+        return (
+          <a class="mx-5" href={url}>
+            {name}
+          </a>
+        );
+      })
+    }
+
     <h1 class="text-3xl text-center">Astro</h1>
-    <p>Home page of the project</p>
+    <p class="mx-10">Home page of the project</p>
   </body>
 </html>

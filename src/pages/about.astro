@@ -1,5 +1,13 @@
 ---
-
+const navitems = [
+  { url: "/", name: "Home" },
+  { url: "/about", name: "About" },
+  { url: "/blog", name: "Blog" },
+];
+const myname = navitems[1].name;
+const myitems = navitems.filter(({ url, name }) => {
+  return name != myname;
+});
 ---
 
 <html lang="en">
@@ -11,9 +19,20 @@
     <title>Astro</title>
   </head>
   <body>
-    <a href="/">Home</a>
-    <a href="/blog">Blog</a>
+    {
+      myitems.map(({ url, name }) => {
+        return (
+          <a class="mx-5" href={url}>
+            {name}
+          </a>
+        );
+      })
+    }
     <h1 class="text-3xl text-center">About the Project</h1>
-    <p>This is work in progress to explore Astro's island archtecture</p>
+    <p class="mx-5">
+      This is work in progress to explore Astro's island archtecture. Astro,
+      Tailwind and Netlify make throwing something together and deplying it
+      quite seemless. So far
+    </p>
   </body>
 </html>
