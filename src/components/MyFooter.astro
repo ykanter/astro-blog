@@ -1,0 +1,13 @@
+---
+const { myUrl } = Astro.props;
+const prefix = "https://";
+const fullUrl = prefix + myUrl;
+---
+
+<footer class="mx-10 my-10">
+  <p>
+    To learn more please visit <a class="text-purple-800" href={fullUrl}
+      >{myUrl}</a
+    >
+  </p>
+</footer>

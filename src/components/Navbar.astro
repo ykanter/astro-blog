@@ -1,6 +1,5 @@
 ---
 const { myind } = Astro.props;
-const myclass = "mx-5 text-blue-800"
 const navitems = [
   { url: "/", name: "Home" },
   { url: "/about", name: "About" },
@@ -16,7 +15,7 @@ const myitems = navitems.filter(({ url, name }) => {
   {
     myitems.map(({ url, name }) => {
       return (
-        <a class={myclass} href={url}>
+        <a class="mx-5 text-blue-800" href={url}>
           {name}
         </a>
       );

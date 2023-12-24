@@ -1,5 +1,7 @@
 ---
 import Navbar from "../components/Navbar.astro";
+import MyFooter
+ from "../components/MyFooter.astro";
 const listitems = [
   "Pick your framework: we'll use bun and astro",
   "Deploy to GitHub",
@@ -39,5 +41,6 @@ const blogposts = ["post-1", "post-2"];
         })
       }
     </ul>
+    <MyFooter myUrl="astro.build" />
   </body>
 </html>
