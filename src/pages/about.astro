@@ -1,14 +1,7 @@
 ---
 import { literal } from "astro/zod";
-const navitems = [
-  { url: "/", name: "Home" },
-  { url: "/about", name: "About" },
-  { url: "/blog", name: "Blog" },
-];
-const myname = navitems[1].name;
-const myitems = navitems.filter(({ url, name }) => {
-  return name != myname;
-});
+import Navbar from "../components/Navbar.astro";
+
 const identity = {
   firstName: "Jonathan",
   country: "France",
@@ -38,15 +31,8 @@ const goal = 3;
     <title>Astro</title>
   </head>
   <body>
-    {
-      myitems.map(({ url, name }) => {
-        return (
-          <a class="mx-5" href={url}>
-            {name}
-          </a>
-        );
-      })
-    }
+    <Navbar myind="1" />
+
     <h1 class="text-3xl text-center">About the Project</h1>
     <p class="mx-5">
       This is work in progress to explore Astro's island archtecture. <br

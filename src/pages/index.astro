@@ -1,13 +1,5 @@
 ---
-const navitems = [
-  { url: "/", name: "Home" },
-  { url: "/about", name: "About" },
-  { url: "/blog", name: "Blog" },
-];
-const myname = navitems[0].name;
-const myitems = navitems.filter(({ url, name }) => {
-  return name != myname;
-});
+import Navbar from "../components/Navbar.astro";
 ---
 
 <html lang="en">
@@ -19,15 +11,7 @@ const myitems = navitems.filter(({ url, name }) => {
     <title>Astro</title>
   </head>
   <body>
-    {
-      myitems.map(({ url, name }) => {
-        return (
-          <a class="mx-5" href={url}>
-            {name}
-          </a>
-        );
-      })
-    }
+    <Navbar myind="0" />
 
     <h1 class="text-3xl text-center">Astro</h1>
     <p class="mx-10">Home page of the project</p>

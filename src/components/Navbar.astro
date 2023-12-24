@@ -1,0 +1,25 @@
+---
+const { myind } = Astro.props;
+const myclass = "mx-5 text-blue-800"
+const navitems = [
+  { url: "/", name: "Home" },
+  { url: "/about", name: "About" },
+  { url: "/blog", name: "Blog" },
+];
+const myname = navitems[myind].name;
+const myitems = navitems.filter(({ url, name }) => {
+  return name != myname;
+});
+---
+
+<div>
+  {
+    myitems.map(({ url, name }) => {
+      return (
+        <a class={myclass} href={url}>
+          {name}
+        </a>
+      );
+    })
+  }
+</div>
