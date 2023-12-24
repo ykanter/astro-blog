@@ -1,4 +1,5 @@
 ---
+import { literal } from "astro/zod";
 const navitems = [
   { url: "/", name: "Home" },
   { url: "/about", name: "About" },
@@ -8,6 +9,24 @@ const myname = navitems[1].name;
 const myitems = navitems.filter(({ url, name }) => {
   return name != myname;
 });
+const identity = {
+  firstName: "Jonathan",
+  country: "France",
+  occupation: "Devloper",
+  hobbies: ["swimming", "running", "writing"],
+};
+const skills = [
+  "C++",
+  "Python",
+  "JavaScript",
+  "Bayesian Statistics",
+  "Zig",
+  "Svelte",
+  "Astro",
+];
+const happy = true;
+const finished = false;
+const goal = 3;
 ---
 
 <html lang="en">
@@ -30,9 +49,30 @@ const myitems = navitems.filter(({ url, name }) => {
     }
     <h1 class="text-3xl text-center">About the Project</h1>
     <p class="mx-5">
-      This is work in progress to explore Astro's island archtecture. Astro,
-      Tailwind and Netlify make throwing something together and deplying it
-      quite seemless. So far
+      This is work in progress to explore Astro's island archtecture. <br
+      />Astro, Tailwind and Netlify make throwing something together and
+      deplying it quite seemless.<br />So far<br /><br />
+    </p>
+    <h3 class="text-2xl mx-5">A bit about me</h3>
+    <ul class="list-disc mx-10">
+      <li>My name is {identity.firstName}</li>
+      <li>I live in {identity.country}</li>
+    </ul>
+    <p class="text-xl mx-5">My hobbies are</p>
+    <ul class="list-disc mx-10">
+      {
+        identity.hobbies.map((hob) => {
+          return <li>{hob}</li>;
+        })
+      }
+    </ul>
+    <p class="text-xl mx-5">Some of my skills are:</p>
+    <ul class="list-disc mx-10">
+      {skills.map((skill) => <li>{skill}</li>)}
+    </ul>
+    {happy && <p class="mx-5">I am enjoying learning Astro</p>}
+    <p class="mx-5">
+      I am {finished ? "finished" : "not finished"} with the tutorial
     </p>
   </body>
 </html>
