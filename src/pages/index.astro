@@ -1,21 +1,9 @@
 ---
-import Navbar from "../components/Navbar.astro";
-import MyFooter from "../components/MyFooter.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "Astro";
+const navIndex = 0;
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <Navbar myind="0" />
-
-    <h1 class="text-3xl text-center">Astro</h1>
-    <p class="mx-10">Home page of the project</p>
-    <MyFooter myUrl="astro.build" />
-  </body>
-</html>
+<BaseLayout pageTitle={pageTitle} navIndex={navIndex}>
+  <p class="mx-10 text-slate-900">This is the home page of the project</p>
+</BaseLayout>

@@ -1,7 +1,7 @@
 ---
-import { literal } from "astro/zod";
-import Navbar from "../components/Navbar.astro";
-import MyFooter from "../components/MyFooter.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "About the Project";
+const navIndex = 1;
 
 const identity = {
   firstName: "Jonathan",
@@ -23,44 +23,31 @@ const finished = false;
 const goal = 3;
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <Navbar myind="1" />
-
-    <h1 class="text-3xl text-center">About the Project</h1>
-    <p class="mx-5">
-      This is work in progress to explore Astro's island archtecture. <br
-      />Astro, Tailwind and Netlify make throwing something together and
-      deplying it quite seemless.<br />So far<br /><br />
-    </p>
-    <h3 class="text-2xl mx-5">A bit about me</h3>
-    <ul class="list-disc mx-10">
-      <li>My name is {identity.firstName}</li>
-      <li>I live in {identity.country}</li>
-    </ul>
-    <p class="text-xl mx-5">My hobbies are</p>
-    <ul class="list-disc mx-10">
-      {
-        identity.hobbies.map((hob) => {
-          return <li>{hob}</li>;
-        })
-      }
-    </ul>
-    <p class="text-xl mx-5">Some of my skills are:</p>
-    <ul class="list-disc mx-10">
-      {skills.map((skill) => <li>{skill}</li>)}
-    </ul>
-    {happy && <p class="mx-5">I am enjoying learning Astro</p>}
-    <p class="mx-5">
-      I am {finished ? "finished" : "not finished"} with the tutorial
-    </p>
-    <MyFooter myUrl="astro.build" />
-  </body>
-</html>
+<BaseLayout pageTitle={pageTitle} navIndex={navIndex}>
+  <p class="mx-5">
+    This is work in progress to explore Astro's island archtecture. <br />Astro,
+    Tailwind and Netlify make throwing something together and deplying it quite
+    seemless.<br />So far<br /><br />
+  </p>
+  <h3 class="text-2xl mx-5">A bit about me</h3>
+  <ul class="list-disc mx-10">
+    <li>My name is {identity.firstName}</li>
+    <li>I live in {identity.country}</li>
+  </ul>
+  <p class="text-xl mx-5">My hobbies are</p>
+  <ul class="list-disc mx-10">
+    {
+      identity.hobbies.map((hob) => {
+        return <li>{hob}</li>;
+      })
+    }
+  </ul>
+  <p class="text-xl mx-5">Some of my skills are:</p>
+  <ul class="list-disc mx-10">
+    {skills.map((skill) => <li>{skill}</li>)}
+  </ul>
+  {happy && <p class="mx-5">I am enjoying learning Astro</p>}
+  <p class="mx-5">
+    I am {finished ? "finished" : "not finished"} with the tutorial
+  </p>
+</BaseLayout>
