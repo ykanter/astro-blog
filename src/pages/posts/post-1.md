@@ -6,7 +6,7 @@ description: "Landing on planet Four Seasons"
 author: "Jonathan"
 image:
   url: "/images/portugese.png"
-  alt: "Four Seasons Resort"
+  alt: "portugese man of war picture"
   height: 400
   width: 300
 tags: ["Palm Beach", "Four Seasons"]
