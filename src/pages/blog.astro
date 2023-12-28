@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-const pageTitle = "Blog"
-const navIndex = 2
+const pageTitle = "Astro Blog";
+const navIndex = 2;
 
 const listitems = [
   "Pick your framework: we'll use bun and astro",
@@ -9,17 +9,26 @@ const listitems = [
   "Connect to Netlify",
 ];
 
-const blogposts = ["post-1", "post-2"];
+//const blogposts = ["post-1", "post-2"];
+const allPosts = await Astro.glob("../pages/posts/*.md");
 ---
+
 <BaseLayout pageTitle={pageTitle} navIndex={navIndex}>
   <p class="mx-10">Modern integrations are remarkably simple</p>
-    <ul class="list-disc mx-10">
-      {listitems.map((x) => <li>{x}</li>)}
-    </ul>
-    <p class="mx-10">And here you go</p>
-    <br> <br>
-    <h2 class="text-2xl mx-10">Blog Posts</h2>
-    <ul class="list-disc mx-20">
-      { blogposts.map( b => <li><a href=`../posts/${b}`>{b}</a></li>) }
-    </ul>
+  <ul class="list-disc mx-10">
+    {listitems.map((x) => <li>{x}</li>)}
+  </ul>
+  <p class="mx-10">And here you go</p>
+  <br />
+  <br />
+  <h2 class="text-2xl mx-10">Blog Posts</h2>
+  <ul class="list-disc mx-20">
+    {
+      allPosts.map((post) => (
+        <li>
+          <a href={post.url}>{post.frontmatter.title}</a>
+        </li>
+      ))
+    }
+  </ul>
 </BaseLayout>
