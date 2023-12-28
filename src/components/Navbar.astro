@@ -5,7 +5,7 @@ const navitems = [
   { url: "/about", name: "About" },
   { url: "/blog", name: "Blog" },
 ];
-const myname = navitems[myind].name;
+const myname = navitems[myind]?.name ?? "Nothing";
 const myitems = navitems.filter(({ url, name }) => {
   return name != myname;
 });
