@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BlogPostItem from "../components/BlogPostItem.astro";
+import MyTags from "../components/MyTags.astro";
 
 const pageTitle = "Astro Blog";
 const navIndex = 2;
@@ -31,4 +32,5 @@ const allPosts = await Astro.glob("../pages/posts/*.md");
       ))
     }
   </ul>
+  <MyTags />
 </BaseLayout>
