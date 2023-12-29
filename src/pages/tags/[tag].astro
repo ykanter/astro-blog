@@ -1,0 +1,33 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import BlogPostItem from "../../components/BlogPostItem.astro";
+
+export async function getStaticPaths() {
+  const allPosts = await Astro.glob("../posts/*.md");
+  return [
+    { params: { tag: "Palm Beach" }, props: { posts: allPosts } },
+    { params: { tag: "Four Seasons" }, props: { posts: allPosts } },
+    { params: { tag: "js" }, props: { posts: allPosts } },
+    { params: { tag: "framework" }, props: { posts: allPosts } },
+    { params: { tag: "astro" }, props: { posts: allPosts } },
+    { params: { tag: "Cabana" }, props: { posts: allPosts } },
+  ];
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+const myPosts = posts.filter((post) => post.frontmatter.tags?.includes(tag));
+---
+
+<BaseLayout pageTitle={tag} navIndex="5">
+  <p class="mx-5">
+    Posts tagged with <span class="text-xl text-purple-700">{tag}</span>
+  </p>
+  <ul class="list-disc mx-10">
+    {
+      myPosts.map((post) => (
+        <BlogPostItem url={post.url} title={post.frontmatter.title} />
+      ))
+    }
+  </ul>
+</BaseLayout>
