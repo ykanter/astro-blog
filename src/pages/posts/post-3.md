@@ -6,7 +6,7 @@ description: "Why yet another fromework"
 author: "Jonathan"
 image:
   url: "/images/astro-logo.png"
-  alt: "astro-logo"
+  alt: "my-logo"
   height: 200
   width: 150
 tags: ["Javascript", "Frameworks", "Server Side Rendering"]

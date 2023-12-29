@@ -9,9 +9,17 @@ const myname = navitems[myind]?.name ?? "Nothing";
 const myitems = navitems.filter(({ url, name }) => {
   return name != myname;
 });
+import { Image } from "astro:assets";
 ---
 
-<div>
+<div class="grid grid-rows-1 grid-flow-col w-1/4">
+  <Image
+    src="/images/my-logo.png"
+    alt="logo"
+    width="20"
+    height="30"
+    class="mx-5"
+  />
   {
     myitems.map(({ url, name }) => {
       return (
