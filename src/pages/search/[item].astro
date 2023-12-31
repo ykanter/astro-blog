@@ -1,16 +1,16 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import BlogPostItem from "../../components/BlogPostItem.astro";
-const { tag } = Astro.params;
+const { item } = Astro.params;
 const allPosts = await Astro.glob("../posts/*.md");
-const myPosts = allPosts.filter((post) => post.frontmatter.tags.includes(tag));
+const myPosts = allPosts.filter((post) => post.frontmatter.body.includes(item));
 
-const pageTitle = `Tag: ${tag}`;
+const pageTitle = `Search Item: ${item}`;
 ---
 
 <BaseLayout pageTitle={pageTitle} navIndex="5">
   <p class="mx-5">
-    Posts containing tag <span class="text-xl text-purple-700">{tag}</span>
+    Posts containing <span class="text-xl text-purple-700">{item}</span>
   </p>
   <ul class="list-disc mx-10">
     {
