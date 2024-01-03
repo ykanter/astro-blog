@@ -1,16 +1,14 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: "Welcome to Palm Beach"
-pubDate: 2023-12-23
-description: "Landing on planet Four Seasons"
+title: "Modern Integrations"
+pubDate: 2023-12-29
+description: "Hit the ground running"
 author: "Jonathan"
 image:
-  url: "/images/portugese.png"
-  alt: "portugese man of war picture"
-  height: 400
-  width: 300
-tags: ["Palm Beach", "Four Seasons"]
-body: "The first sight of the ocean is special. The smell. The foam. 
-Waves crashing and surrounding the sandaled feet. But the ocean was not happening this year. 
-There were transparent bubbles of portugese man of war strewn all over the beach and we both know what happens when you get stung by it. One of us, an experienced swimmer,  had the experience in Bermuda and  barely made it ashore. He got stung in the hand and the welt was unimpressively tiny. He did not want to think about what a full body hit would feel like. And he would never, ever go into the water with those things around, so that was that. Swimming pool from now on."
+  url: "/images/astro-logo.png"
+  alt: "my-logo"
+  height: 40
+  width: 30
+tags: ["astro", "bun", "framework", "netlify", "tailwind", "css"]
+body: "Putting together a decent tech stack is rather easy these days. Pick your framework: we'll use bun and astro, Deploy to GitHub, Connect to Netlify. And you are good to go. Sort of."
 ---

@@ -1,14 +1,14 @@
 ---
-layout: "../../layouts/MarkdownPostLayout.astro"
-title: "A Room With a View"
-pubDate: 2023-12-23
-description: "A lazy day is a good day"
+layout: ../../layouts/MarkdownPostLayout.astro
+title: "Why Astro"
+pubDate: 2023-12-29
+description: "Why yet another fromework"
 author: "Jonathan"
 image:
-  url: "/images/four-seasons-1.png"
-  alt: "Four Seasons Resort"
-  width: 400
-  height: 300
-tags: ["Cabana", "Four Seasons"]
-body: "If you are not renting a cabana you are not doing it right. Idleness is the whole point of being here. As the world turns, this tiny part is staying still. The work will be there when you get back. Guaranteed"
+  url: "/images/astro-logo.png"
+  alt: "my-logo"
+  height: 40
+  width: 30
+tags: ["astro", "js", "framework", "Server Side Rendering"]
+body: "Somehow Astro feels different. Unpretentious. It is there to help but does not get in the way, you kind of just get on with the project. Components? Sure. Partial hydration? Be our guest. Your favorite front framework? Of course. Very pleasant"
 ---

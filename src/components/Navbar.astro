@@ -1,4 +1,5 @@
 ---
+import Search from "./Search.svelte";
 const { myind } = Astro.props;
 const navitems = [
   { url: "/", name: "Home" },
@@ -23,10 +24,11 @@ import { Image } from "astro:assets";
   {
     myitems.map(({ url, name }) => {
       return (
-        <a class="mx-5 text-blue-800" href={url}>
+        <a class="mx-5 my-2 text-blue-800" href={url}>
           {name}
         </a>
       );
     })
   }
+  <Search client:load />
 </div>

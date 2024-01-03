@@ -1,14 +1,14 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: "Why Astro"
-pubDate: 2023-12-29
+title: "Why Bun"
+pubDate: 2024-01-03
 description: "Why yet another fromework"
 author: "Jonathan"
 image:
   url: "/images/astro-logo.png"
   alt: "my-logo"
-  height: 200
-  width: 150
-tags: ["astro", "js", "framework", "Server Side Rendering"]
-body: "Somehow Astro feels different. Unpretentious. It is there to help but does not get in the way, you kind of just get on with the project. Components? Sure. Partial hydration? Be our guest. Other frameworks? Of course. Very pleasant"
+  height: 40
+  width: 30
+tags: ["bun", "js", "framework", "zig"]
+body: "OK, why Bun then. Short answer is I tried it and kind of fell in love with it. It is wicked fast and feels well put together. I also like Zig, which is what Bun is written in. And liked Jarrod's answer on why it is so performant. Relentless profiling"
 ---

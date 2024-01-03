@@ -12,13 +12,13 @@ import BaseLayout from "./BaseLayout.astro";
     Published on {frontmatter.pubDate.split("T")[0]}
   </h3>
   <Image
-    class="mx-10"
+    class="mx-5"
     src={frontmatter.image.url}
     alt={frontmatter.image.alt}
     width={frontmatter.image.width}
     height={frontmatter.image.height}
   />
-  <p class="mx-10">{frontmatter.body}</p>
+  <p class="mx-5">{frontmatter.body}</p>
 
   <slot />
 </BaseLayout>
