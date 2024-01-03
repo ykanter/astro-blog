@@ -2,11 +2,11 @@
 layout: ../../layouts/MarkdownPostLayout.astro
 title: "Why Bun"
 pubDate: 2024-01-03
-description: "Why yet another fromework"
+description: "This thing moves"
 author: "Jonathan"
 image:
-  url: "/images/astro-logo.png"
-  alt: "my-logo"
+  url: "/images/bun-logo.jpeg"
+  alt: "bun-logo"
   height: 40
   width: 30
 tags: ["bun", "js", "framework", "zig"]

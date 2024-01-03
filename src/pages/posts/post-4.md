@@ -5,8 +5,8 @@ pubDate: 2024-01-03
 description: "Careful, you will not go back"
 author: "Jonathan"
 image:
-  url: "/images/astro-logo.png"
-  alt: "my-logo"
+  url: "/images/tw-logo.jpeg"
+  alt: "tw-logo"
   height: 40
   width: 30
 tags: ["tailwind", "css"]
