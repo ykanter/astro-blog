@@ -3,7 +3,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import BlogPostItem from "../../components/BlogPostItem.astro";
 const { item } = Astro.params;
 const allPosts = await Astro.glob("../posts/*.md");
-const myPosts = allPosts.filter((post) => post.frontmatter.body.includes(item));
+const myPosts = allPosts.filter((post) =>
+  post.frontmatter.body.toLowerCase().includes(item?.toLowerCase())
+);
 
 const pageTitle = `Search Item: ${item}`;
 ---
