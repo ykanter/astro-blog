@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
 title: "Modern Integrations"
 pubDate: 2023-12-29
 description: "Hit the ground running"

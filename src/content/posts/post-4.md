@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
 title: "Why Tailwind"
 pubDate: 2024-01-03
 description: "Careful, you will not go back"

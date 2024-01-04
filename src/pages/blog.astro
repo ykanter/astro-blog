@@ -1,21 +1,25 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BlogPostItem from "../components/BlogPostItem.astro";
+import { getCollection } from "astro:content";
 import MyTags from "../components/MyTags.astro";
 
 const pageTitle = "Astro Blog";
 const navIndex = 2;
-
-//const blogposts = ["post-1", "post-2"];
-const allPosts = await Astro.glob("../pages/posts/*.md");
+const collection = "posts";
+const allPosts = await getCollection(collection);
+const posts = allPosts.filter((post) => post.slug !== "default");
 ---
 
 <BaseLayout pageTitle={pageTitle} navIndex={navIndex}>
   <h2 class="text-2xl mx-10">Blog Posts</h2>
   <ul class="list-disc mx-20">
     {
-      allPosts.map((post) => (
-        <BlogPostItem url={post.url} title={post.frontmatter.title} />
+      posts.map((post) => (
+        <BlogPostItem
+          url={`${collection}/${post.slug}`}
+          title={post.data.title}
+        />
       ))
     }
   </ul>

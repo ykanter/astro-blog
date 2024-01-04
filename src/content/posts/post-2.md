@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
 title: "Why Astro"
 pubDate: 2023-12-29
 description: "Why yet another fromework"

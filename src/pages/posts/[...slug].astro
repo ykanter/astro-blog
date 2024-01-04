@@ -1,0 +1,27 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getEntry } from "astro:content";
+const { slug } = Astro.params;
+const name = slug?.split(".")[0] ?? "default";
+const post = await getEntry("posts", name);
+---
+
+<BaseLayout pageTitle={post?.data?.title} navIndex="5">
+  <h3 class="text-right mx-10">
+    Written by {post?.data?.author}
+  </h3>
+  <h3 class="text-right mx-10">
+    Published on {post?.data?.pubDate}
+  </h3>
+  <Image
+    class="mx-5"
+    src={post?.data?.image.url ?? "default.png"}
+    alt={post?.data?.image.alt ?? "default"}
+    width={40}
+    height={40}
+  />
+  <p class="mx-5">{post?.data?.body}</p>
+
+  <slot />
+</BaseLayout>

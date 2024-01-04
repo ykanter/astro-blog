@@ -1,10 +1,16 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import BlogPostItem from "../../components/BlogPostItem.astro";
+import { getCollection } from "astro:content";
 const { item } = Astro.params;
-const allPosts = await Astro.glob("../posts/*.md");
+if (typeof item === "undefined") {
+  throw new Error("item undefined");
+}
+
+const collection = "posts";
+const allPosts = await getCollection(collection);
 const myPosts = allPosts.filter((post) =>
-  post.frontmatter.body.toLowerCase().includes(item?.toLowerCase())
+  post.data.body.toLowerCase().includes(item.toLowerCase())
 );
 
 const pageTitle = `Search Item: ${item}`;
@@ -17,7 +23,10 @@ const pageTitle = `Search Item: ${item}`;
   <ul class="list-disc mx-10">
     {
       myPosts.map((post) => (
-        <BlogPostItem url={post.url} title={post.frontmatter.title} />
+        <BlogPostItem
+          url={`/${collection}/${post.slug}`}
+          title={post.data.title}
+        />
       ))
     }
   </ul>

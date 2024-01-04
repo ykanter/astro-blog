@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
 title: "Why Bun"
 pubDate: 2024-01-03
 description: "This thing moves"
