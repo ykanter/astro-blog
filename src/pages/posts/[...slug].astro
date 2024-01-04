@@ -12,7 +12,9 @@ const post = await getEntry("posts", name);
     Written by {post?.data?.author}
   </h3>
   <h3 class="text-right mx-10">
-    Published on {post?.data?.pubDate}
+    Published on {
+      post?.data?.pubDate.toString().split(" ").slice(0, 4).join(" ")
+    }
   </h3>
   <Image
     class="mx-5"
