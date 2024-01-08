@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from "astro:transitions";
+import { ViewTransitions, fade, slide } from "astro:transitions";
 import Header from "../components/Header.astro";
 import MyFooter from "../components/MyFooter.astro";
 const { pageTitle, navIndex } = Astro.props;
@@ -17,7 +17,12 @@ const { pageTitle, navIndex } = Astro.props;
   <body>
     <Header myIndex={navIndex} />
 
-    <h1 class="text-3xl text-center">{pageTitle}</h1>
+    <h1
+      transition:animate={slide({ duration: "1s" })}
+      class="text-3xl text-center"
+    >
+      {pageTitle}
+    </h1>
     <slot />
     <MyFooter myUrl="astro.build" />
   </body>
