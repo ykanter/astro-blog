@@ -17,11 +17,11 @@ const post = await getEntry("posts", name);
     }
   </h3>
   <Image
-    class="mx-5"
+    class="mx-5 float-start"
     src={post?.data?.image.url ?? "default.png"}
     alt={post?.data?.image.alt ?? "default"}
-    width={40}
-    height={40}
+    width={80}
+    height={80}
   />
   <p class="mx-5">{post?.data?.body}</p>
 
