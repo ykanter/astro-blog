@@ -6,8 +6,8 @@ author: "Jonathan"
 image:
   url: "/images/astro-logo.png"
   alt: "my-logo"
-  height: 40
-  width: 30
+  height: 90
+  width: 90
 tags: ["astro", "bun", "framework", "netlify", "tailwind", "css"]
 body: "Putting together a decent tech stack is rather easy these days. Pick your framework: we'll use bun and astro, Deploy to GitHub, Connect to Netlify. And you are good to go. Sort of."
 ---

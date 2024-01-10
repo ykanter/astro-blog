@@ -20,8 +20,9 @@ const post = await getEntry("posts", name);
     class="mx-5 float-start"
     src={post?.data?.image.url ?? "default.png"}
     alt={post?.data?.image.alt ?? "default"}
-    width={80}
-    height={80}
+    width={post?.data?.image.width ?? 80}
+    height={post?.data?.image.height ?? 80}
+    }
   />
   <p class="mx-5">{post?.data?.body}</p>
 
